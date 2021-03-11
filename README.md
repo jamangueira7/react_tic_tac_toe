@@ -7,7 +7,7 @@
 
 <br>
 
-## Jogo da velha (Tic tac toe)
+# Jogo da velha (Tic tac toe) com React Native
 
 ## 🚀 Tecnologias
 
@@ -16,34 +16,32 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
 - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5) 
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS) 
-- [NodeJS](https://nodejs.org/en/) 
-- [Socket.io](https://socket.io/) 
+- [React Native](https://reactnative.dev/) 
+- [Yarn](https://yarnpkg.com/) 
+- [NPM](https://www.npmjs.com/) 
 
 
 ## 💻 Projeto
 
-Jogo da velha em rede usando Socket.io e node.
+Jogo da velha em React Native.
 
-O visual do jogo foi baseado no video do canal [Código fonte](https://www.youtube.com/watch?v=M258B1b_pMs)
+Canal [Programador BR](https://www.youtube.com/watch?v=8pDQ13MQQZo)
 
 <p align="center">
-  <img alt="game" src=".github/game.PNG" width="100%">
+  <img alt="game" src=".github/game.PNG">
 </p>
 
 <p align="center">
-  <img alt="game" src=".github/game2.PNG" width="100%">
-</p>
-
-<p align="center">
-  <img alt="game" src=".github/animated.gif" width="100%">
+  <img alt="game" src=".github/game2.PNG">
 </p>
 
 ## 🚀 Como Rodar
 
 - Clone o projeto.
-- Entre no repositório e rode "yarn install"
-- Rode "yarn start"
-- acesse o frontend em "http://localhost:3000"
+- Entre na pasta do projeto e rode yarn install (pode usar npm install de acordo com a sua configuração).
+- react-native run-android.
+
+Para rodar o emulador do Android ou iOS siga o guia da Rocketseat [aqui](https://react-native.rocketseat.dev/android/emulador/).
 
 ## 🤔 Como contribuir
 
