@@ -44,7 +44,7 @@ export default class App extends Component<Props> {
     if (this.state.gameOver) {
       return (
           <View style={styles.gameOver}>
-            <Text style={styles.gameOverText} >Game Over</Text>
+            <Text style={styles.gameOverText} >Game Over - [{tictactoe.simbols.options[tictactoe.simbols.turn_index]}] ganhou!</Text>
           </View>
       );
     }
