@@ -25,7 +25,6 @@ export default {
         if (this.gameover) return false;
         if (this.board[position] === ''){
             this.board[position] = this.simbols.options[this.simbols.turn_index];
-            this.draw();
             let winning_sequences_index = this.check_winning_sequences( this.simbols.options[this.simbols.turn_index] );
             if (winning_sequences_index >= 0){
                 this.game_is_over();
@@ -41,7 +40,7 @@ export default {
 
     check_winning_sequences: function(simbol) {
 
-        for ( i in this.winning_sequences ) {
+        for ( const i in this.winning_sequences ) {
             if (this.board[ this.winning_sequences[i][0] ] == simbol  &&
                 this.board[ this.winning_sequences[i][1] ] == simbol &&
                 this.board[ this.winning_sequences[i][2] ] == simbol) {
