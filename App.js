@@ -6,69 +6,66 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
-  SafeAreaView,
+  Dimensions,
   StyleSheet,
-  ScrollView,
   View,
+  TouchableOpacity,
   Text,
-  StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import tictactoe from './src/tictactoe';
 
-const App: () => React$Node = () => {
-  return (
-      <View style={styles.container}>
-        <Text>Engine: Hermes</Text>
-      </View>
-  );
+export default class App extends Component<Props> {
+
+  constructor(props) {
+    super(props);
+
+    tictactoe.start();
+
+    this.state = {
+      board: tictactoe.board,
+      gameOver: tictactoe.gameover,
+    };
+  }
+
+  makePlay(index){
+
+  }
+
+  render() {
+    return (
+        <View style={styles.container}>
+          {this.state.board.map((value, index) => (
+              <TouchableOpacity
+                  key={index}
+                  style={styles.piece}
+                  onPress={() => this.makePlay(index)}
+              >
+                <Text>
+                  {value}
+                </Text>
+
+              </TouchableOpacity>
+          ))}
+        </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+
+  piece: {
+    width: Dimensions.get('window').width / 3,
+    height: Dimensions.get('window').width / 3,
+    backgroundColor: '#ddd',
+  }
 });
 
-export default App;
